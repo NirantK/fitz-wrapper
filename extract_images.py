@@ -1,13 +1,16 @@
+import json
+from pathlib import Path
+from typing import List
+
 import fire
 import fitz
-from pathlib import Path
-import json
-from typing import List
+
 
 class Convertor(object):
     """
 
     """
+
     def __init__(self, pdf: str, out: str):
         self.document_path = pdf
         assert Path(self.document_path).exists()
@@ -15,7 +18,7 @@ class Convertor(object):
         if not self.output_dir.exists():
             self.output_dir.mkdir(exist_ok=True)
 
-    def extract(self)->List[str]:
+    def extract(self) -> List[str]:
         """
         This function convert pdf pages into PNG images. To convert pdf pages to png images, fitz package is used.
 
@@ -46,6 +49,7 @@ class Convertor(object):
                     pix1 = None
                 pix = None
         print(json.dumps(image_filenames, indent=2))
+
 
 if __name__ == "__main__":
     fire.Fire(Convertor)
