@@ -7,7 +7,7 @@ nibabel==2.3.1
 numpy==1.14.4
 PyMuPDF==1.13.20
 python-dateutil==2.7.3
-pyxnat==0.0.0
+pyxnat>=0.0.0
 requests==2.20.0
 six==1.11.0
 urllib3==1.24
